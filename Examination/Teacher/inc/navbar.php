@@ -1,5 +1,15 @@
 
+<?php
+function getUnDoneRequestCount($conn)
+{
+  $sql = "SELECT COUNT(*) FROM recorrection WHERE approved = 1 AND status = 0";
+  $stmt = $conn->prepare($sql);
+  $stmt->execute();
+  return $stmt->fetchColumn();
+}
 
+$newRequestsCount = getUnDoneRequestCount($conn);
+?>
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
