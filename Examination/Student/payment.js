@@ -30,35 +30,7 @@ function buynow(id) {
         };
 
         // Put the payment variables here
-        var payment = {
-          sandbox: true,
-          merchant_id: "1228461", // Replace your Merchant ID
-          return_url:
-            "http://localhost/SABARAEXAMDEP/Examination/Student/payment.php", // Important
-          cancel_url:
-            "http://localhost/SABARAEXAMDEP/Examination/Student/payment.php", // Important
-          notify_url:
-            "http://localhost/SABARAEXAMDEP/Examination/Student/payment.php",
-          order_id: "ItemNo12345",
-          items: j.pn,
-          amount: j.pp,
-          currency: "LKR",
-          hash: j.hash, // *Replace with generated hash retrieved from backend
-          first_name: j.un,
-          last_name: "Perera",
-          batch: j.btc,
-          email: "",
-          phone: j.um,
-          address: "No.1, Galle Road",
-          city: "Colombo",
-          country: "Sri Lanka",
-          delivery_address: "No. 46, Galle road, Kalutara South",
-          delivery_city: "Kalutara",
-          delivery_country: "Sri Lanka",
-          custom_1: "",
-          custom_2: "",
-        };
-
+        
         // Show the payhere.js popup, when "PayHere Pay" is clicked
 
         payhere.startPayment(payment);
