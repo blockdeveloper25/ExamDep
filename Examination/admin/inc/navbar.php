@@ -1,15 +1,5 @@
 
-<?php
-function getUnDoneRequestCount($conn)
-{
-  $sql = "SELECT COUNT(*) FROM recorrection WHERE approved = 1 AND status = 0";
-  $stmt = $conn->prepare($sql);
-  $stmt->execute();
-  return $stmt->fetchColumn();
-}
 
-$newRequestsCount = getUnDoneRequestCount($conn);
-?>
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
@@ -24,29 +14,43 @@ $newRequestsCount = getUnDoneRequestCount($conn);
         <li class="nav-item">
           <a class="nav-link" aria-current="page" href="index.php">Dashboard</a>
         </li>
-        
         <li class="nav-item">
-          <a class="nav-link" href="addmarks.php">Add Table</a>
+          <a class="nav-link" href="teacher.php">Teachers</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="marks.php">Add Marks</a>
+          <a class="nav-link" href="student.php">Students</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="registrar-office.php">Department Head</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="course_code.php">Completed Requests</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="updatemarks.php">Update Grade</a>
-        </li>
-        <li class="nav-item">
-          
-          <a class="nav-link" href="teacher_requests.php">Recorrection Requests
+          <a class="nav-link" href="recorrect_req.php">Recorrection Request
             <?php if ($newRequestsCount > 0) : ?>
               <span class="badge bg-danger"><?= $newRequestsCount ?></span>
             <?php endif; ?>
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="completedreq.php">Completed Requests</a>
+          <a class="nav-link" href="upload_pdf.php">Time Tables</a>
+        </li>
+        
+       
+        <li class="nav-item">
+          <a class="nav-link" href="examform1.php">Exam Forms</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="pass.php">Change Password</a>
+          <a class="nav-link" href="confirmexam.php">Exam Confirmation</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="attendance.php">Attendance</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="settings.php">Settings</a>
         </li>
 
       </ul>
